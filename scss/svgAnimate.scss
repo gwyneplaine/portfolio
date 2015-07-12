@@ -1,0 +1,59 @@
+
+.svgWrapper{
+	width:100%;
+	position: absolute;
+	top:0;
+	left:0;
+
+}
+.svgComponents{
+		position: absolute;
+		display:block;
+		transform: 
+			translate(100%,100%)
+			scale(0.5);
+}
+#ramSkin{
+	.leftHorn polygon{
+		transition: all 1s;
+		transform: translate(0px);
+	}
+
+	.rightHorn polygon{
+		transition: all 1s;
+		transform: translate(0px);
+	}
+
+	&.exploded{
+		.leftHorn{
+			@for $i from 1 through 13 {
+				polygon:nth-child(#{$i}){
+					$s: ($i*.2s);
+					transition: all $s;
+					transform: translate(-200px*$i) rotate($i*50deg);
+					transform-origin: right center;
+				}
+			}
+		}
+
+		.rightHorn{
+			@for $i from 1 through 13{
+				polygon:nth-child(#{$i}){
+					$s: ($i*.2s);
+					transition: all $s;
+					transform: translate(200px*$i) rotate($i*-50deg);
+					transform-origin: left center;
+				}
+			}
+		}
+	}
+}
+
+.design{
+	background: #eeeeee;
+	transition: all .4s;
+}
+.development{
+	background: #2c2c2c;
+	transition: all .4s;
+}

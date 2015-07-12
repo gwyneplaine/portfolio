@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+.hidden{
+	display:none !important;
+}
+
+section{
+	padding:200px;
+	height:100vh;
+	position:relative;
+}
+.beginning{
+	// padding:0px;
+}
+section:nth-child(even){
+	background: #eeeeee;
+}
