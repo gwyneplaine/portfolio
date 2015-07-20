@@ -1,33 +1,54 @@
 // var $ramSkin = $('#ramSkin');
-
+aExplode = new TimelineLite({ onComplete: hideEl });
+		var hideEl= function(){
+			$('#ramSkin').attr('class','svgWrapper hidden');
+		}
 var svcAnimate = {
+	$leftHorns: $('#ramSkin .leftHorn polygon'),
 	designTheme: function(){
 		$('body').removeClass('development');
 		$('body').addClass("design");
 		$('#ramSkin').attr('class','svgWrapper');
-		var rescale = TweenLite.to('#ramSkin .svgComponents', 2, {
+	var rescale = TweenLite.to('#ramSkin .svgComponents', 0, {
 			scale: 0.5,
 			transformOrigin: "center top"
-		});
-		
+	});
+		aExplode.reverse();
 	},
 	developerTheme: function(){
 		$('body').removeClass('design');
 		$('body').addClass('development');
-		var $leftHorns = $('#ramSkin .leftHorn polygon');
-		console.log($leftHorns);
-
-		
-		for (var i = 1; i <= $leftHorns.length; i++){
-			var hornshards = $('#ramSkin .leftHorn polygon:nth-child(' + i + ')');
-			console.log($('.sect'+i));
-			var hornSplosion = TweenLite.to('#ramSkin .leftHorn .sect'+i,2,{
-				transform: 'translate('+(200 * i)+'px) rotate('+(i * -50)+'px)',
+		console.log(this.$leftHorns);
+		// debugger;
+		for (var i = 1; i <= this.$leftHorns.length; i++){
+			var lhornshards = '#ramSkin .leftHorn polygon:nth-child(' + i + ')';
+			var rhornshards = '#ramSkin .rightHorn polygon:nth-child(' + i + ')';
+			console.log($(lhornshards));
+			// aExplode.to(lhornshards, 0.01,{
+			// 	rotation: i*-50,
+			// 	transformOrigin: 'center center',
+			// });
+			// aExplode.to(rhornshards, 0.01,{
+			// 	rotation: i*50,
+			// 	transformOrigin: 'center center',
+			// })
+			aExplode.to(lhornshards, 0.01,{
+				rotation: i*-5,
+				transform: 'translate('+(-500*i)+'px) ',
 				transformOrigin: 'left center',
 			});
+			aExplode.to(rhornshards, 0.01,{
+				rotation: i*5,
+				transform: 'translate('+(500*i)+'px) ',
+				transformOrigin: 'right center',
+			})
 		}
-
-		$('#ramSkin').attr('class','svgWrapper hidden');
+		aExplode.to('#ramSkin',0.05,{
+			opacity:0,
+			display:'none'
+		});
+		aExplode.play();
+		
 
 		// $('#ramSkin').attr('class','svgWrapper exploded');
 		// $('#ramSkin').one('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(e){
@@ -40,10 +61,12 @@ $(document).ready(function(){
 	var midX = $(window).innerWidth/2;
 	var midY = $(window).innerHeight/2;
 
-	var tween2 = TweenLite.to('#ramSkull .svgComponents', 2, {
+	var tween2 = TweenLite.to('#ramSkull .svgComponents', 0, {
 		scale: 0.5,
 		transformOrigin: "center top"
 	});
+
+
 	// $('.svgComponents').css('transform', 'translate('+ midX +','+ midY +')');
 	$('body').on('click','#ramSkull', function(event){
 		event.stopImmediatePropagation();

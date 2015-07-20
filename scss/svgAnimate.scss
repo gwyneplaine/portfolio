@@ -24,30 +24,30 @@
 		transform: translate(0px);
 	}
 
-	&.exploded{
-		.leftHorn{
-			@for $i from 1 through 13 {
-				polygon:nth-child(#{$i}){
-					$s: ($i*.2s);
-					transition: all $s;
-					transform: translate(-200px*$i) rotate($i*50deg);
-					transform-origin: right center;
-				}
-			}
-		}
+// 	&.exploded{
+// 		.leftHorn{
+// 			@for $i from 1 through 13 {
+// 				polygon:nth-child(#{$i}){
+// 					$s: ($i*.2s);
+// 					transition: all $s;
+// 					transform: translate(-200px*$i) rotate($i*50deg);
+// 					transform-origin: right center;
+// 				}
+// 			}
+// 		}
 
-		.rightHorn{
-			@for $i from 1 through 13{
-				polygon:nth-child(#{$i}){
-					$s: ($i*.2s);
-					transition: all $s;
-					transform: translate(200px*$i) rotate($i*-50deg);
-					transform-origin: left center;
-				}
-			}
-		}
-	}
-}
+// 		.rightHorn{
+// 			@for $i from 1 through 13{
+// 				polygon:nth-child(#{$i}){
+// 					$s: ($i*.2s);
+// 					transition: all $s;
+// 					transform: translate(200px*$i) rotate($i*-50deg);
+// 					transform-origin: left center;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 .design{
 	background: #eeeeee;
