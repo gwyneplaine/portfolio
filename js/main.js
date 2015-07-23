@@ -49,6 +49,7 @@ app.svcAnimate = {
 		$('body').addClass("design");
 		$('#ramSkin').attr('class','svgWrapper');
 
+
 		$('#devPortfolio').addClass('hidden');
 		$('#desPortfolio').removeClass('hidden');
 
@@ -57,6 +58,7 @@ app.svcAnimate = {
 		var rescale = TweenLite.to('#ramSkin .svgComponents', 0, {
 				scale: 0.5,
 				transformOrigin: "center 25%"
+
 		});
 		aExplode.reverse();
 	},
@@ -64,11 +66,13 @@ app.svcAnimate = {
 		$('body').removeClass('design');
 		$('body').addClass('development');
 		console.log(this.$leftHorns);
+
 		$('#desPortfolio').addClass('hidden');
 		$('#devPortfolio').removeClass('hidden');
 
 		$('.excerpt.des').addClass('hidden');
 		$('.excerpt.dev').removeClass('hidden');
+
 		// debugger;
 		// for (var i = 1; i <= this.$leftHorns.length; i++){
 		// 	var lhornshards = '#ramSkin .leftHorn polygon:nth-child(' + i + ')';
@@ -210,6 +214,7 @@ $(document).ready(function(){
 	var tween2 = TweenLite.to('#ramSkull .svgComponents', 1, {
 		scale: 0.5,
 		transformOrigin: "center 25%"
+
 	});
 
 	$('body').on('click','#ramSkull', function(event){
