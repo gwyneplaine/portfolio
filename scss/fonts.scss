@@ -1,0 +1,42 @@
+h1, h2, h3, h4{
+  font-family: 'MONTSERRAT', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+h1{
+  font-size: 42px;
+  text-transform:uppercase;
+}
+h2{
+  font-size: 36px;
+}
+h3{
+  font-size:30px;
+}
+h4{
+  font-size: 24px;
+}
+h5{
+  font-size: 18px;
+}
+p{
+  font-size: 16px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight:400;
+}
+
+.underline{
+  display:inline-block;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+  margin-bottom: 1em;
+}
+.underline-left{
+  @extend .underline;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.underline-center{
+  @extend .underline;
+  text-align:center;
+}

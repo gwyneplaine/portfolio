@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+.noListStyle {
+  list-style: none;
+  padding: 0px; }
+
+h1, h2, h3, h4 {
+  font-family: 'MONTSERRAT', Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+h1 {
+  font-size: 42px;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 36px; }
+
+h3 {
+  font-size: 30px; }
+
+h4 {
+  font-size: 24px; }
+
+h5 {
+  font-size: 18px; }
+
+p {
+  font-size: 16px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+.underline, .underline-left, .underline-center {
+  display: inline-block;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+  margin-bottom: 1em; }
+
+.underline-left {
+  padding-right: 20px;
+  text-align: left; }
+
+.underline-center {
+  text-align: center; }
+
+.angleShard, .angleShardL, .angleShardR {
+  width: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -100;
+  height: 300px; }
+
+.angleShardL {
+  left: -250px;
+  transform: rotate(8deg); }
+
+.angleShardR {
+  top: -45px;
+  right: -25px;
+  transform: rotate(-5deg); }
+
+.circlePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: white;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -75px;
+  position: absolute; }
+
+.excerpt {
+  padding: 60px;
+  text-align: center; }
+
+body {
+  overflow-x: hidden; }
+
+.hidden {
+  display: none !important; }
+
+.container {
+  max-width: 980px; }
+
+section {
+  min-height: 100vh;
+  position: relative; }
+
+#beginning {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 200px;
+  z-index: 0; }
+  #beginning .excerpt {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    max-width: 960px;
+    margin: 0 auto;
+    left: 0px;
+    width: 100%;
+    color: #c8c8c8; }
+
+#introduction {
+  display: block;
+  background: #001e2d;
+  color: #c8c8c8;
+  transform: translateY(100vh); }
+  #introduction p {
+    font-size: 18px; }
+
+.portfolio {
+  transform: translateY(100vh);
+  background: #002837;
+  color: #c8c8c8; }
+
+#desPortfolio {
+  background: #eeeeee;
+  color: black; }
+
+.design {
+  background: #eeeeee;
+  transition: all .4s; }
+  .design #introduction {
+    background: #d2503c;
+    color: black; }
+    .design #introduction a {
+      color: #c8c8c8; }
+
+.development {
+  background: #000a19;
+  transition: all .4s; }
+
+.image {
+  background: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: inherit; }
+
+.content {
+  padding-top: 20vh;
+  padding-bottom: 150px;
+  display: block; }
+
+.devProject {
+  margin-bottom: 80px; }
+
+.sideNav {
+  position: fixed;
+  right: 0;
+  padding: 5px;
+  top: 25vh;
+  background: #eeeeee;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-top-left-radius: 4px;
+  -ms-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-bottom-left-radius: 4px;
+  -ms-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  z-index: 5000; }
+  .sideNav .contactTile {
+    padding: 2px;
+    margin: 0 auto;
+    text-align: center; }
+    .sideNav .contactTile i {
+      color: #001e2d; }
+
+footer {
+  background: #0a0a1e;
+  transform: translateY(100vh);
+  color: #c8c8c8; }
+
+.svgWrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.svgComponents {
+  position: absolute;
+  display: block;
+  transform: translate(100%, 100%) scale(0.5); }
+
+svg {
+  z-index: 100;
+  cursor: pointer; }
+
+#ramSkin .leftHorn polygon {
+  transition: all 1s;
+  transform: translate(0px); }
+#ramSkin .rightHorn polygon {
+  transition: all 1s;
+  transform: translate(0px); }
+
+/*# sourceMappingURL=styles.css.map */
