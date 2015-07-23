@@ -1,0 +1,33 @@
+.angleShard{
+	width:100%;
+	position: absolute;
+	background:inherit;
+	z-index: -100;
+	height:300px;
+}
+.angleShardL{
+	@extend .angleShard;
+	left:-250px;
+	transform:rotate(8deg);
+}
+.angleShardR{
+	@extend .angleShard;
+	top:-45px;
+	right:-25px;
+	transform:rotate(-5deg);
+}
+.circlePic{
+	width:200px;
+	height:200px;
+	border-radius:100%;
+	background: #fff;
+	margin:0 auto;
+	left:0;
+	right:0;
+	top:-75px;
+	position: absolute;
+}
+.excerpt{
+	padding:60px;
+  text-align:center;
+}

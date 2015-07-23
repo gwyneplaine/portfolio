@@ -1,33 +1,48 @@
 // var $ramSkin = $('#ramSkin');
+var app = app || {};
 aExplode = new TimelineLite({ onComplete: hideEl });
 		var hideEl= function(){
 			$('#ramSkin').attr('class','svgWrapper hidden');
 		}
 skullNeut = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:2});
-skinNeut = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:2});
+bgDev = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:2});
+bgDes = new TimelineMax({yoyo:true,repeat:-1, repeatDelay:2});
+skinNeut = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:1});
 	var reverse = function(){
 		debugger;
 		console.log("Complete");
 	}
-var rgbaRange = {
+app.rgbaRange = {
 	r:{
 			min: 0,
-	 		max: 25
+	 		max: 25,
+			val: function(){
+				return (Math.random())* (this.max- this.min) + (this.min);
+			}
 		},
 	g: {
 			min:100,
-			max:200
+			max:200,
+			val: function(){
+				return (Math.random())* (this.max- this.min) + (this.min);
+			}
 		},
 	b: {
 			min:200,
-			max:255
+			max:255,
+			val: function(){
+				return (Math.random())* (this.max- this.min) + (this.min);
+			}
 		},
 	a: {
 			min: 0.2,
-			max:0.8
+			max:0.8,
+			val: function(){
+				return (Math.random())* (this.max- this.min) + (this.min);
+			}
 		}
 }
-var svcAnimate = {
+app.svcAnimate = {
 	$leftHorns: $('#ramSkin .leftHorn polygon'),
 	designTheme: function(){
 		$('body').removeClass('development');
@@ -35,7 +50,7 @@ var svcAnimate = {
 		$('#ramSkin').attr('class','svgWrapper');
 		var rescale = TweenLite.to('#ramSkin .svgComponents', 0, {
 				scale: 0.5,
-				transformOrigin: "center top"
+				transformOrigin: "center 35%"
 		});
 		aExplode.reverse();
 	},
@@ -72,7 +87,7 @@ var svcAnimate = {
 		aExplode.play();
 	},
 	aExpl: function(element,value,seconds){
-		children = $(element).children();
+		children = $(element).children('polygon');
 		console.log($(element).attr('class'));
 		console.log(children);
 		console.log($(children[0]).attr('class'));
@@ -110,7 +125,7 @@ var svcAnimate = {
 		// this.addTo(bgAnim,'polygons',3s)
 	},
 	color: function(timeline, element, rgbRange){
-		var	array = $(element).children('polygon');
+		var	array = $(element).children('*');
 		array = this.randArr(array);
 		var view = this;
 		var r, g, b, a;
@@ -118,10 +133,10 @@ var svcAnimate = {
 		var params = {}
 		_.each(array, function(polygon){
 
-			r = (Math.random())* (rgbaRange.r.max- rgbaRange.r.min) + (rgbaRange.r.min); // (25-0) + (0);
-			g = (Math.random())* (rgbaRange.g.max- rgbaRange.g.min) + (rgbaRange.g.min); // (200-100) + 100;
-			b = (Math.random())* (rgbaRange.b.max- rgbaRange.b.min) + (rgbaRange.b.min); // (255-200) + 200;
-			a =  Math.random() * (rgbaRange.a.max- rgbaRange.a.min) + (rgbaRange.a.min); // (0.8 - 0.2) + 0.2;
+			r = app.rgbaRange.r.val(); //(Math.random())* (rgbaRange.r.max- rgbaRange.r.min) + (rgbaRange.r.min); // (25-0) + (0);
+			g = app.rgbaRange.g.val(); //(Math.random())* (rgbaRange.g.max- rgbaRange.g.min) + (rgbaRange.g.min); // (200-100) + 100;
+			b = app.rgbaRange.b.val(); //(Math.random())* (rgbaRange.b.max- rgbaRange.b.min) + (rgbaRange.b.min); // (255-200) + 200;
+			a = app.rgbaRange.a.val(); //Math.random() * (rgbaRange.a.max- rgbaRange.a.min) + (rgbaRange.a.min); // (0.8 - 0.2) + 0.2;
 			params = {
 				fill: "rgba("+ r +","+ g +","+ b +","+a+")",
 				stroke: "rgba("+ r +","+ g +","+ b +","+a+")"
@@ -150,39 +165,57 @@ var svcAnimate = {
 		timeline.to(element, seconds, parameters);
 	}
 };
-
+app.utilities = {
+	resizeShards: function(){
+		var winW = $(window).width();
+		$('.angleShardR').width(winW+800);
+	}
+}
 $(document).ready(function(){
 	var midX = $(window).innerWidth/2;
 	var midY = $(window).innerHeight/2;
-	svcAnimate.color(skullNeut,'#ramSkull g');
-	rgbaRange.r.min = 100;
-	rgbaRange.r.max = 255;
-	rgbaRange.b.min = 0;
-	rgbaRange.b.max = 25;
-	rgbaRange.g.min = 20;
-	rgbaRange.g.max = 50;
-	svcAnimate.color(skinNeut,'#ramSkin g');
+	app.svcAnimate.color(skullNeut,'#ramSkull g');
+	app.utilities.resizeShards();
+	$(window).on('resize',function(){
+		app.utilities.resizeShards();
+	})
+	// if($('#ramSkin').css('display') == "none"){
+	// 	bgDes.to('body',2,{
+	// 		backgroundColor: "rgba("+app.rgbaRange.r.val()+","+app.rgbaRange.g.val()+","+app.rgbaRange.b.val()+","+app.rgbaRange.a.val()+")"
+	// 	})
+	// } else {
 
-	var tween2 = TweenLite.to('#ramSkull .svgComponents', 0, {
+	// 	bgDev.to('body',2,{
+	// 		backgroundColor: "rgba("+app.rgbaRange.r.val()+","+app.rgbaRange.g.val()+","+app.rgbaRange.b.val()+","+app.rgbaRange.a.val()+")"
+	// 	})
+	// }
+
+	app.rgbaRange.r.min = 100, app.rgbaRange.r.max = 255;
+	app.rgbaRange.b.min = 0, app.rgbaRange.b.max = 25;
+	app.rgbaRange.g.min = 20, app.rgbaRange.g.max = 50;
+
+	app.svcAnimate.color(skinNeut,'#ramSkin g');
+
+	var tween2 = TweenLite.to('#ramSkull .svgComponents', 1, {
 		scale: 0.5,
-		transformOrigin: "center top"
+		transformOrigin: "center 35%"
 	});
-	// var yoyo = bgAnim.yoyo();
-	// bgAnim.yoyo(true);
-	// $('.svgComponents').css('transform', 'translate('+ midX +','+ midY +')');
+
 	$('body').on('click','#ramSkull', function(event){
 		event.stopImmediatePropagation();
 		console.log("this is being clicked");
-		svcAnimate.designTheme();
+		app.svcAnimate.designTheme();
 	});
+
 	// $(window).on('resize',function(){
 	// 	var winH = $(window).innerHeight();
 	// 	var winW = $(window).innerWidth();
 	// 	$('svg').attr('viewBox','0 0 '+ winW + ' ' + winH + ' ')
 	// })
+
 	$('body').on('click','#ramSkin',function(event){
 		event.stopImmediatePropagation();
-		svcAnimate.developerTheme();
+		app.svcAnimate.developerTheme();
 	})
 
 });
