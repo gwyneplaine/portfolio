@@ -1,9 +1,11 @@
 // var $ramSkin = $('#ramSkin');
 var app = app || {};
+
 aExplode = new TimelineLite({ onComplete: hideEl });
 		var hideEl= function(){
 			$('#ramSkin').attr('class','svgWrapper hidden');
 		}
+
 skullNeut = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:2});
 bgDev = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:2});
 bgDes = new TimelineMax({yoyo:true,repeat:-1, repeatDelay:2});
@@ -43,13 +45,12 @@ app.rgbaRange = {
 		}
 }
 app.svcAnimate = {
+
 	$leftHorns: $('#ramSkin .leftHorn polygon'),
 	designTheme: function(){
 		$('body').removeClass('development');
 		$('body').addClass("design");
 		$('#ramSkin').attr('class','svgWrapper');
-
-
 		$('#devPortfolio').addClass('hidden');
 		$('#desPortfolio').removeClass('hidden');
 
@@ -60,6 +61,7 @@ app.svcAnimate = {
 				transformOrigin: "center 25%"
 
 		});
+
 		aExplode.reverse();
 	},
 	developerTheme: function(){
@@ -223,6 +225,7 @@ $(document).ready(function(){
 		app.svcAnimate.designTheme();
 
 	});
+
 
 	// $(window).on('resize',function(){
 	// 	var winH = $(window).innerHeight();
