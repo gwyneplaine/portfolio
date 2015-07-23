@@ -1,19 +1,33 @@
-*{
-	margin: 0;
-	box-sizing: border-box;
-}
+
 .hidden{
 	display:none !important;
 }
 
 section{
-	padding:200px;
-	height:100vh;
+	// padding:200px;
+	// height:100vh;
 	position:relative;
 }
+#beginning{
+	height: 100vh;
+	padding: 200px;
+}
+#introduction{
+	background: $darkblue100;
+	color: $white;
+}
+.image{
+	background: $black100;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: inherit;
+}
+// .content{
+// 	padding: 15px;
+// }
 .beginning{
 	// padding:0px;
 }
-section:nth-child(even){
-	background: #eeeeee;
-}
+// section:nth-child(even){
+// 	background: #eeeeee;
+// }

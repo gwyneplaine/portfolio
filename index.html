@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400,700|Palanquin:300,400' rel='stylesheet' type='text/css'>
+	<link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/7.0.0/basscss.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="development">
-<section class="beginning">
+<section id="beginning">
 	<svg id="ramSkull" class="svgWrapper" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 472.5 445.8" enable-background="new 0 0 472.5 445.8" xml:space="preserve">
 		<g class="svgComponents">
@@ -193,7 +195,8 @@
 				</g>
 			</g>
 			<g class="leftHorn">
-
+				<polygon display="none" fill="#E6E6E6" stroke="#999999" stroke-miterlimit="10" points="1,369.6 28,269.1 38.7,225.9 44,209.1
+					51.5,183.8 94,134.7 65.9,98.5 79.3,60.6 121.1,43.1 161,112.8 139.5,133.5 106.7,194.9 98.7,225.8 96.3,266.1 			"/>
 				<polygon class="sect11" fill="#CCCCCC" stroke="#999999" stroke-miterlimit="10" points="1,369.6 38.8,225.9 51.7,265.9
 					96.4,266.1 			"/>
 				<polygon class="sect12" fill="#CCCCCC" stroke="#999999" stroke-miterlimit="10" points="31.7,309.8 23.8,284.6 1,369.6
@@ -222,6 +225,9 @@
 			<g class="rightHorn">
 				<polygon class="sect11" fill="#CCCCCC" stroke="#999999" stroke-miterlimit="10" points="471.5,369.6 433.7,225.9 420.8,265.9
 					376.1,266.1 			"/>
+				<polygon display="none" fill="#E6E6E6" stroke="#999999" stroke-miterlimit="10" points="471.5,369.6 444.5,269.1 433.8,225.9
+					428.5,209.1 421.1,183.8 378.5,134.7 406.6,98.5 393.2,60.6 351.4,43.1 311.5,112.8 333,133.5 365.8,194.9 373.8,225.8
+					376.2,266.1 			"/>
 				<polygon class="sect12" fill="#CCCCCC" stroke="#999999" stroke-miterlimit="10" points="440.8,309.8 448.7,284.6 471.5,369.6
 					409.5,301.7 			"/>
 				<polygon class="sect10" fill="#CCCCCC" stroke="#999999" stroke-miterlimit="10" points="433.7,225.9 428.4,281.7 376.1,266.1
@@ -252,20 +258,17 @@
 	</svg>
 
 </section>
-<section id="introduction">
-	<h1>Hello, Friend</h1>
-	<p>
-		<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quis. Dolore, vero commodi dicta ipsa temporibus rerum culpa amet blanditiis inventore incidunt, quaerat, excepturi explicabo nemo accusamus nesciunt fuga voluptatem?</span>
-		<span>Aspernatur non placeat ipsam sed suscipit tempore labore, quibusdam quas debitis possimus inventore quos atque, rerum eum illum. Explicabo ut possimus dolores repellendus error, repudiandae aperiam ducimus natus dicta a.</span>
-		<span>Sunt blanditiis sed molestiae consectetur sequi sapiente quidem veritatis ipsum tempore explicabo quo, culpa nam ad incidunt! Inventore harum, aliquam sapiente odio iste explicabo voluptates nesciunt odit ad consectetur ipsum.</span>
-		<span>Est laboriosam ipsa mollitia fugit itaque veniam similique, molestias quod quas animi cumque magni id, sit nulla earum labore, recusandae voluptatum voluptates fugiat. In architecto cupiditate ut, aliquid laborum debitis!</span>
-		<span>Amet atque voluptatem illo voluptas, quae quam quidem, natus fugiat reprehenderit commodi laboriosam velit culpa fuga ad harum, similique. In doloremque eaque similique aliquam minima. Nihil nisi, dolor similique nemo.</span>
-		<span>Hic dolor eum, accusamus recusandae rem ullam odio ipsa sed consequuntur voluptate impedit atque adipisci nihil maxime numquam facilis repellat, earum distinctio! Reiciendis asperiores modi doloremque, fuga, quos natus sed.</span>
-		<span>Unde laudantium autem, omnis doloribus ratione voluptatem dolor culpa accusantium id tempore molestias ducimus deserunt impedit fugiat quasi laboriosam. Unde, possimus, laboriosam. Obcaecati molestiae atque dolor officia vero consequatur vel.</span>
-		<span>Ipsa, vel culpa, nulla numquam explicabo voluptatem, architecto consectetur maiores officia vero ab reiciendis odit earum exercitationem, sed aut alias illo quis nesciunt nam. Excepturi obcaecati totam laudantium quae, numquam!</span>
-		<span>Ea minus quibusdam blanditiis quas quasi et non ipsam quia doloribus illum magni, dolores ipsum unde, quos rerum quis adipisci veniam aut nisi expedita sed nostrum eligendi nesciunt odit dolor.</span>
-		<span>At eaque fugit voluptate dolores non nostrum est alias excepturi ex eos saepe nam illum tempore, laboriosam assumenda aut rerum ratione ab labore asperiores dolorem mollitia voluptas. Porro, dolores beatae!</span>
-	</p>
+<section id="introduction" class="clearfix">
+	<div class="content center sm-col sm-col-12 py4 px3">
+		<h1 class="underline-center">Hello, Friend</h1>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quis. Dolore, vero commodi dicta ipsa temporibus rerum culpa amet blanditiis inventore incidunt, quaerat, excepturi explicabo nemo accusamus nesciunt fuga voluptatem?</span>
+			<span>Aspernatur non placeat ipsam sed suscipit tempore labore, quibusdam quas debitis possimus inventore quos atque, rerum eum illum. Explicabo ut possimus dolores repellendus error, repudiandae aperiam ducimus natus dicta a.</span>
+			<span>Amet atque voluptatem illo voluptas, quae quam quidem, natus fugiat reprehenderit commodi laboriosam velit culpa fuga ad harum, similique. In doloremque eaque similique aliquam minima. Nihil nisi, dolor similique nemo.</span>
+		</p>
+
+	</div>
+
 </section>
 <section id="portfolio">
 

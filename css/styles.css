@@ -2,16 +2,61 @@
   margin: 0;
   box-sizing: border-box; }
 
+h1, h2, h3, h4 {
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+h1 {
+  font-size: 42px; }
+
+h2 {
+  font-size: 36px; }
+
+h3 {
+  font-size: 30px; }
+
+h4 {
+  font-size: 24px; }
+
+h5 {
+  font-size: 18px; }
+
+p {
+  font-size: 16px;
+  font-family: 'Palanquin', Helvetica, Arial, sans-serif;
+  font-weight: 300; }
+
+.underline, .underline-left, .underline-center {
+  display: inline-block;
+  border-bottom: 2px solid #c8c8c8;
+  padding-bottom: 10px; }
+
+.underline-left {
+  padding-right: 20px;
+  text-align: left; }
+
+.underline-center {
+  text-align: center; }
+
 .hidden {
   display: none !important; }
 
 section {
-  padding: 200px;
-  height: 100vh;
   position: relative; }
 
-section:nth-child(even) {
-  background: #eeeeee; }
+#beginning {
+  height: 100vh;
+  padding: 200px; }
+
+#introduction {
+  background: #000019;
+  color: #c8c8c8; }
+
+.image {
+  background: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: inherit; }
 
 .svgWrapper {
   width: 100%;
@@ -30,110 +75,6 @@ section:nth-child(even) {
 #ramSkin .rightHorn polygon {
   transition: all 1s;
   transform: translate(0px); }
-#ramSkin.exploded .leftHorn polygon:nth-child(1) {
-  transition: all 0.2s;
-  transform: translate(-200px) rotate(50deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(2) {
-  transition: all 0.4s;
-  transform: translate(-400px) rotate(100deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(3) {
-  transition: all 0.6s;
-  transform: translate(-600px) rotate(150deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(4) {
-  transition: all 0.8s;
-  transform: translate(-800px) rotate(200deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(5) {
-  transition: all 1s;
-  transform: translate(-1000px) rotate(250deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(6) {
-  transition: all 1.2s;
-  transform: translate(-1200px) rotate(300deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(7) {
-  transition: all 1.4s;
-  transform: translate(-1400px) rotate(350deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(8) {
-  transition: all 1.6s;
-  transform: translate(-1600px) rotate(400deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(9) {
-  transition: all 1.8s;
-  transform: translate(-1800px) rotate(450deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(10) {
-  transition: all 2s;
-  transform: translate(-2000px) rotate(500deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(11) {
-  transition: all 2.2s;
-  transform: translate(-2200px) rotate(550deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(12) {
-  transition: all 2.4s;
-  transform: translate(-2400px) rotate(600deg);
-  transform-origin: right center; }
-#ramSkin.exploded .leftHorn polygon:nth-child(13) {
-  transition: all 2.6s;
-  transform: translate(-2600px) rotate(650deg);
-  transform-origin: right center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(1) {
-  transition: all 0.2s;
-  transform: translate(200px) rotate(-50deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(2) {
-  transition: all 0.4s;
-  transform: translate(400px) rotate(-100deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(3) {
-  transition: all 0.6s;
-  transform: translate(600px) rotate(-150deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(4) {
-  transition: all 0.8s;
-  transform: translate(800px) rotate(-200deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(5) {
-  transition: all 1s;
-  transform: translate(1000px) rotate(-250deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(6) {
-  transition: all 1.2s;
-  transform: translate(1200px) rotate(-300deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(7) {
-  transition: all 1.4s;
-  transform: translate(1400px) rotate(-350deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(8) {
-  transition: all 1.6s;
-  transform: translate(1600px) rotate(-400deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(9) {
-  transition: all 1.8s;
-  transform: translate(1800px) rotate(-450deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(10) {
-  transition: all 2s;
-  transform: translate(2000px) rotate(-500deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(11) {
-  transition: all 2.2s;
-  transform: translate(2200px) rotate(-550deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(12) {
-  transition: all 2.4s;
-  transform: translate(2400px) rotate(-600deg);
-  transform-origin: left center; }
-#ramSkin.exploded .rightHorn polygon:nth-child(13) {
-  transition: all 2.6s;
-  transform: translate(2600px) rotate(-650deg);
-  transform-origin: left center; }
 
 .design {
   background: #eeeeee;
