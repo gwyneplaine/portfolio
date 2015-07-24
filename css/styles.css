@@ -262,6 +262,9 @@ section {
       #beginning .excerpt p {
         font-size: 15px; }
 
+  .portfolio {
+    overflow-x: hidden; }
+
   #introduction, .portfolio, footer {
     -webkit-transform: none;
     transform: none; }

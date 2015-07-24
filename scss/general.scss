@@ -115,6 +115,9 @@ section{
 			padding:4em;
 		}
 	}
+	.portfolio{
+		overflow-x:hidden;
+	}
 	#introduction, .portfolio, footer{
 		-webkit-transform:none;
 		transform:none;
