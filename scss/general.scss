@@ -116,6 +116,7 @@ section{
 		}
 	}
 	#introduction, .portfolio, footer{
+		-webkit-transform:none;
 		transform:none;
 		.content{
 			padding-top:0vh;

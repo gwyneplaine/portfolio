@@ -263,6 +263,7 @@ section {
         font-size: 15px; }
 
   #introduction, .portfolio, footer {
+    -webkit-transform: none;
     transform: none; }
     #introduction .content, .portfolio .content, footer .content {
       padding-top: 0vh; }
