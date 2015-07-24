@@ -87,7 +87,60 @@ section{
 	margin-bottom:80px;
 }
 
-
+@media screen and (max-width:640px){
+	h1{
+		font-size:40px;
+	}
+	.px4{
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	#beginning{
+		padding:0px;
+		padding-top:45px;
+		min-height:0;
+		position:relative;
+		svg{
+			display:none !important;
+		}
+		.excerpt{
+			h2{
+				font-size:38px;
+			}
+			p{
+				font-size:15px;
+			}
+			position:relative;
+			margin:0 auto;
+			padding:4em;
+		}
+	}
+	#introduction, .portfolio, footer{
+		transform:none;
+		.content{
+			padding-top:0vh;
+		}
+	}
+	.content{
+		padding-top:10vh;
+	}
+	.circlePic{
+		background: $white100;
+		margin:0 auto;
+		width:100%;
+		position: relative;
+		border-radius:0;
+	}
+	.sideNav{
+		display:table;
+		top:auto;
+		bottom:0;
+		width:100%;
+		.contactTile{
+			display:table-cell;
+		}
+	}
+}
 
 
 

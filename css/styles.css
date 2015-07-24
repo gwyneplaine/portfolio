@@ -238,6 +238,52 @@ section {
 .devProject {
   margin-bottom: 80px; }
 
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 40px; }
+
+  .px4 {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+
+  #beginning {
+    padding: 0px;
+    padding-top: 45px;
+    min-height: 0;
+    position: relative; }
+    #beginning svg {
+      display: none !important; }
+    #beginning .excerpt {
+      position: relative;
+      margin: 0 auto;
+      padding: 4em; }
+      #beginning .excerpt h2 {
+        font-size: 38px; }
+      #beginning .excerpt p {
+        font-size: 15px; }
+
+  #introduction, .portfolio, footer {
+    transform: none; }
+    #introduction .content, .portfolio .content, footer .content {
+      padding-top: 0vh; }
+
+  .content {
+    padding-top: 10vh; }
+
+  .circlePic {
+    background: white;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    border-radius: 0; }
+
+  .sideNav {
+    display: table;
+    top: auto;
+    bottom: 0;
+    width: 100%; }
+    .sideNav .contactTile {
+      display: table-cell; } }
 .svgWrapper {
   width: 100%;
   position: absolute;
