@@ -1,0 +1,89 @@
+.primaryNav{
+	z-index:5000;
+	width:100%;
+	position:fixed;
+	ul{
+		margin-bottom:0px;
+		li{
+			display:inline-block;
+			a{
+				display:block;
+				padding:12px;
+				padding-top:15px;
+				font-weight:400;
+				text-decoration:none;
+				text-transform:uppercase;
+				&:hover{
+					border-bottom:3px solid;
+				}
+			}
+		}
+	}
+}
+.devNav{
+	@extend .primaryNav;
+	background: $darkBlue100;
+	ul{
+		li{
+			a{
+				color: $offWhite100;
+				border-bottom: 3px solid $darkBlue100;
+				&:hover{
+						transition: all .4s;
+						background: $offWhite20;
+				}
+				&.selected{
+					border-bottom: 3px solid $offWhite100;
+				}
+			}
+		}
+	}
+}
+.desNav{
+	@extend .primaryNav;
+	background: $offWhite100;
+	ul{
+		li{
+			a{
+				color:$black100;
+				border-bottom: 3px solid $offWhite100;
+				&:hover{
+					transition: all .4s;
+					color: $mainRed100;
+					border-bottom: 3px solid $mainRed100;
+					background: $mainRed20;
+				}
+				&.selected{
+					color:$mainRed100;
+					border-bottom: 3px solid $mainRed100;
+				}
+			}
+		}
+	}
+}
+
+
+.sideNav{
+	position:fixed;
+	right:0;
+	padding:5px;
+	top:25vh;
+	background: $offWhite100;
+	// border-radius:5px;
+	@include border-top-left-radius(4px);
+	@include border-bottom-left-radius(4px);
+	z-index:5000;
+	.contactTile{
+		padding:2px;
+		margin:0 auto;
+		text-align:center;
+		i{
+			color: $darkTeal100;
+		}
+    a:hover{
+      i{
+        color:$mainRed100;
+      }
+    }
+	}
+}

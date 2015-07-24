@@ -51,8 +51,13 @@ app.svcAnimate = {
 		$('body').removeClass('development');
 		$('body').addClass("design");
 		$('#ramSkin').attr('class','svgWrapper');
+
+		$('#primaryNav').addClass('desNav').removeClass('devNav');
+
 		$('#devPortfolio').addClass('hidden');
 		$('#desPortfolio').removeClass('hidden');
+
+		$('footer').addClass('desFooter').removeClass('devFooter');
 
 		$('.excerpt.dev').addClass('hidden');
 		$('.excerpt.des').removeClass('hidden');
@@ -61,36 +66,22 @@ app.svcAnimate = {
 				transformOrigin: "center 25%"
 
 		});
-
 		aExplode.reverse();
 	},
 	developerTheme: function(){
 		$('body').removeClass('design');
 		$('body').addClass('development');
-		console.log(this.$leftHorns);
+
+		$('#primaryNav').addClass('devNav').removeClass('desNav');
 
 		$('#desPortfolio').addClass('hidden');
 		$('#devPortfolio').removeClass('hidden');
 
+		$('footer').addClass('devFooter').removeClass('desFooter');
+
 		$('.excerpt.des').addClass('hidden');
 		$('.excerpt.dev').removeClass('hidden');
 
-		// debugger;
-		// for (var i = 1; i <= this.$leftHorns.length; i++){
-		// 	var lhornshards = '#ramSkin .leftHorn polygon:nth-child(' + i + ')';
-		// 	var rhornshards = '#ramSkin .rightHorn polygon:nth-child(' + i + ')';
-		// 	console.log($(lhornshards));
-		// 	aExplode.to(lhornshards, 0.01,{
-		// 		rotation: i*-5,
-		// 		transform: 'translate('+(-500*i)+'px) ',
-		// 		transformOrigin: 'left center',
-		// 	});
-		// 	aExplode.to(rhornshards, 0.01,{
-		// 		rotation: i*5,
-		// 		transform: 'translate('+(500*i)+'px) ',
-		// 		transformOrigin: 'right center',
-		// 	});
-		// }
 		this.aExpl('#ramSkin .leftHorn', "negative",0);
 		this.aExpl('#ramSkin .rightHorn', "positive",0);
 		this.aExpl('#ramSkin .leftSide', "negative",0.02);
@@ -189,23 +180,14 @@ app.utilities = {
 	}
 }
 $(document).ready(function(){
-	var midX = $(window).innerWidth/2;
-	var midY = $(window).innerHeight/2;
+	app.midX = $(window).innerWidth/2;
+	app.midY = $(window).innerHeight/2;
+
 	app.svcAnimate.color(skullNeut,'#ramSkull g');
 	app.utilities.resizeShards();
 	$(window).on('resize',function(){
 		app.utilities.resizeShards();
 	})
-	// if($('#ramSkin').css('display') == "none"){
-	// 	bgDes.to('body',2,{
-	// 		backgroundColor: "rgba("+app.rgbaRange.r.val()+","+app.rgbaRange.g.val()+","+app.rgbaRange.b.val()+","+app.rgbaRange.a.val()+")"
-	// 	})
-	// } else {
-
-	// 	bgDev.to('body',2,{
-	// 		backgroundColor: "rgba("+app.rgbaRange.r.val()+","+app.rgbaRange.g.val()+","+app.rgbaRange.b.val()+","+app.rgbaRange.a.val()+")"
-	// 	})
-	// }
 
 	app.rgbaRange.r.min = 100, app.rgbaRange.r.max = 255;
 	app.rgbaRange.b.min = 0, app.rgbaRange.b.max = 25;
@@ -213,29 +195,39 @@ $(document).ready(function(){
 
 	app.svcAnimate.color(skinNeut,'#ramSkin g');
 
-	var tween2 = TweenLite.to('#ramSkull .svgComponents', 1, {
+	app.tween2 = TweenLite.to('#ramSkull .svgComponents', 1, {
 		scale: 0.5,
 		transformOrigin: "center 25%"
-
 	});
 
 	$('body').on('click','#ramSkull', function(event){
 		event.stopImmediatePropagation();
-		console.log("this is being clicked");
 		app.svcAnimate.designTheme();
-
 	});
-
-
-	// $(window).on('resize',function(){
-	// 	var winH = $(window).innerHeight();
-	// 	var winW = $(window).innerWidth();
-	// 	$('svg').attr('viewBox','0 0 '+ winW + ' ' + winH + ' ')
-	// })
 
 	$('body').on('click','#ramSkin',function(event){
 		event.stopImmediatePropagation();
 		app.svcAnimate.developerTheme();
-	})
+	});
+
+	$('body').on('click','#designLink',function(event){
+		event.preventDefault();
+		event.stopImmediatePropagation();
+
+		$('#primaryNav a').removeClass('selected');
+		$(this).addClass('selected');
+
+		app.svcAnimate.designTheme();
+	});
+
+	$('body').on('click','#developmentLink',function(event){
+		event.preventDefault();
+		event.stopImmediatePropagation();
+
+		$('#primaryNav a').removeClass('selected');
+		$(this).addClass('selected');
+
+		app.svcAnimate.developerTheme();
+	});
 
 });

@@ -1,0 +1,30 @@
+footer{
+	-webkit-transform:translate(100vh);
+  transform: translateY(100vh);
+}
+.devFooter{
+	background: $deepGrey;
+	color: $lightGrey100;
+}
+.desFooter{
+  background: $mainRed100;
+  color: $black100;
+  text-transform:uppercase;
+  a{
+    text-decoration:none;
+    color: $white100;
+
+    &:hover{
+        border-bottom: 1px dotted;
+    }
+
+  }
+}
+
+.skills-wrapper{
+	ul{
+		li{
+			display:inline-block;
+		}
+	}
+}

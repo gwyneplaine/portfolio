@@ -4,13 +4,19 @@ $darkTeal100: rgba(0,30,45,1);
 $darkBlue100: rgba(0,10,25,1);
 $medTeal100: rgba(0,40,55,1);
 
-$darkRed100: rgba(210,80,60,1);
+$mainRed100: rgba(210,80,60,1);
+$mainRed20: rgba(210,80,60,.2);
 $lightGrey100: rgba(200,200,200,1);
 $offWhite100: rgba(238, 238, 238, 1);
+$offWhite20: rgba(238,238,238,.1);
 $white100: rgba(255,255,255,1);
+
 .noListStyle{
 	list-style:none;
   padding:0px;
+}
+.full-width{
+  width: 100%;
 }
 @mixin border-radius($radius){
   -webkit-border-radius: $radius;
