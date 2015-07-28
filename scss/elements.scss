@@ -31,3 +31,10 @@
 	padding:60px;
   text-align:center;
 }
+.closeArticle{
+	display:inline-block;
+	cursor:pointer;
+	&:hover{
+		color: $mainRed100;
+	}
+}

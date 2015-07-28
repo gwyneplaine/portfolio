@@ -1,3 +1,17 @@
 .skills{
   max-width:100px;
 }
+
+.featureImg{
+  display:block;
+  width: 100%;
+  background: $white100;
+  height: 400px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  // &:after{
+  //   @extend .angleShardR;
+  //   background: $darkTeal100;
+  //   content: "";
+  // }
+}
