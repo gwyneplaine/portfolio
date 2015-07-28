@@ -86,6 +86,23 @@ section{
 .devProject{
 	margin-bottom:80px;
 }
+#contactMe{
+	background: $darkBlue100;
+	color: $offWhite100;
+	min-height: 0;
+}
+.fauxrallax{
+	transform: translateY(100vh);
+}
+.contactList{
+	li{
+		display:inline-block;
+		padding: 10px;
+		a:hover i{
+			color: $mainRed100;
+		}
+	}
+}
 
 @media screen and (max-width:640px){
 	h1{
@@ -143,6 +160,10 @@ section{
 		.contactTile{
 			display:table-cell;
 		}
+	}
+	#contactMe{
+		-webkit-transform:none;
+		transform:none;
 	}
 }
 

@@ -238,6 +238,20 @@ section {
 .devProject {
   margin-bottom: 80px; }
 
+#contactMe {
+  background: #000a19;
+  color: #eeeeee;
+  min-height: 0; }
+
+.fauxrallax {
+  transform: translateY(100vh); }
+
+.contactList li {
+  display: inline-block;
+  padding: 10px; }
+  .contactList li a:hover i {
+    color: #d2503c; }
+
 @media screen and (max-width: 640px) {
   h1 {
     font-size: 40px; }
@@ -287,7 +301,11 @@ section {
     bottom: 0;
     width: 100%; }
     .sideNav .contactTile {
-      display: table-cell; } }
+      display: table-cell; }
+
+  #contactMe {
+    -webkit-transform: none;
+    transform: none; } }
 .svgWrapper {
   width: 100%;
   position: absolute;
