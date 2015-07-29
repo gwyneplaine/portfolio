@@ -153,6 +153,8 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden; }
+  .featureImg img {
+    width: 100%; }
 
 .grid-sizer, .grid-item {
   width: 33.33333%; }

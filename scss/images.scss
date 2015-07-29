@@ -10,6 +10,9 @@
   background-size:cover;
   background-repeat: no-repeat;
   overflow:hidden;
+  img{
+    width:100%;
+  }
   // &:after{
   //   @extend .angleShardR;
   //   background: $darkTeal100;
