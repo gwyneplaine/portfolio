@@ -15,6 +15,7 @@ skinNeut = new TimelineMax({yoyo:true, repeat:-1, repeatDelay:1});
 		console.log("Complete");
 	}
 app.eventListeners = function(){
+
 	$('body').on('click','#ramSkull', function(event){
 		event.stopImmediatePropagation();
 		app.svcAnimate.designTheme();
@@ -34,6 +35,7 @@ app.eventListeners = function(){
 
 		app.svcAnimate.designTheme();
 	});
+
 	$('body').on('click','#contactLink', function(event){
 		event.preventDefault();
 		$('html, body').animate(
@@ -41,23 +43,35 @@ app.eventListeners = function(){
 				scrollTop: $("#contactMe").offset().top
 			}, 2000);
 	});
+
 	$('body').on('click','#developmentLink',function(event){
 		event.preventDefault();
 		event.stopImmediatePropagation();
 
 		$('#primaryNav a').removeClass('selected');
 		$(this).addClass('selected');
-
 		app.svcAnimate.developerTheme();
 	});
-	$('body').on('click','#portfolio', function(event){
+
+	$('body').on('click','#portfolioLink', function(event){
 			event.preventDefault();
 			if($('body').hasClass('development')){
 				app.utilities.scrollToEl('#devPortfolio');
 			}else if($('body').hasClass('design')){
 				app.utilities.scrollToEl('#desPortfolio')
 			}
-	})
+	});
+
+	$('body').on('click', '.portfolio-thumb', function(event){
+		var $id = $(this).data('id');
+		$('#'+$id).removeClass('hidden');
+		$('body').addClass('noScroll');
+	});
+
+	$('body').on('click','.closeArticle', function(event){
+		$(this).closest('.portfolio-item').addClass('hidden');
+		$('body').removeClass('noScroll');
+	});
 }
 app.rgbaRange = {
 	r:{
@@ -102,7 +116,15 @@ app.utilities = {
 			}, 2000);
 	}
 }
+
 $(document).ready(function(){
+	// $('.grid').masonry({
+	// 	// set itemSelector so .grid-sizer is not used in layout
+	// 	itemSelector: '.grid-item',
+	// 	// use element for option
+	// 	columnWidth: '.grid-sizer',
+	// 	percentPosition:true
+	// });
 	app.midX = $(window).innerWidth/2;
 	app.midY = $(window).innerHeight/2;
 	app.eventListeners();

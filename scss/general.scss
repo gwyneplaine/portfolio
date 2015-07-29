@@ -1,8 +1,10 @@
 
 body{
-	overflow-x:hidden;
+	// overflow-x:hidden;
 }
-
+.noScroll{
+	overflow:hidden;
+}
 .hidden{
 	display:none !important;
 }
@@ -49,13 +51,12 @@ section{
 .portfolio{
 	-webkit-transform: translateY(100vh);
 	transform: translateY(100vh);
+	min-height: 0px;
 	background: $medTeal100;
 	color: $lightGrey100;
 	.content{
 		padding-top: 10vh;
-		h1{
-			margin-top:0px;
-		}
+
 	}
 }
 #desPortfolio{
@@ -138,6 +139,7 @@ section{
 	}
 	.portfolio{
 		overflow-x:hidden;
+
 	}
 	#introduction, .portfolio, footer{
 		-webkit-transform:none;
@@ -172,6 +174,22 @@ section{
 }
 
 .portfolio-item{
+	position: fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:5000;
+	overflow:scroll;
+	background: $darkTeal100;
+	color: $white100;
+	.content{
+		padding-top: 10vh;
+	}
+
+	h1{
+		margin-top:0px;
+	}
 	.featureImg{
 		position:relative;
 	}
@@ -179,7 +197,12 @@ section{
 		position:absolute;
 		right: 10px;
 		top: 10px;
+		color:$medTeal100;
+		&:hover{
+			color: $mainRed100;
+		}
 	}
+
 }
 
 

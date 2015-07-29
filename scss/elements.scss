@@ -38,3 +38,82 @@
 		color: $mainRed100;
 	}
 }
+
+.shard-container{
+    transform: scale(0.5);
+    width: 200px;
+    height: 200px;
+    display:block;
+    transform-origin: center center;
+    position: relative;
+    margin: 0 auto;
+    background: linen;
+    transition: .4s transform cubic-bezier(.6,-.28,.735,.045)         .5s,.6s height cubic-bezier(.77,0,.175,1) 0s;
+}
+.shard-container:hover{
+    transform: scale(1.0);
+    transition: .4s transform cubic-bezier(.175,.885,.32,1.275) 0s,.6s height cubic-bezier(.77,0,.175,1) 0s;
+}
+.shard{
+    -webkit-backface-visibility:hidden;
+    left:50%;
+    top:25%;
+    border-top: 2.25em solid transparent;
+    border-bottom: 2em solid transparent;
+    border-left: 3.75em solid #282828;
+    border-right: none;
+    position:absolute;
+    transform-origin: left bottom;
+    z-index:100;
+    border-radius: 3px 3px 0 0;
+}
+
+.slice-container{
+		position: absolute;
+		display:table;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+    transform: scale(0.5);
+    width: 200px;
+    height: 200px;
+    transform-origin: center center;
+    margin: 0 auto;
+    transition: .4s transform cubic-bezier(.6,-.28,.735,.045) .5s,.6s height cubic-bezier(.77,0,.175,1) 0s;
+		p{
+			display:table-cell;
+			opacity:0;
+			vertical-align:middle;
+			z-index:2000;
+			text-align:center;
+      transition: opacity .4s 1s;
+			padding-top:35px;
+			color:$white100;
+		}
+}
+
+.slice{
+    -webkit-backface-visibility:hidden;
+    left:50%;
+    top:25%;
+    border-top: 2.25em solid transparent;
+    border-bottom: 2em solid transparent;
+    border-left: 3.75em solid $medTeal100;
+    border-right: none;
+    position:absolute;
+    transform-origin: left bottom;
+    z-index:-100;
+    border-radius: 3px 3px 0 0;
+}
+@for $i from 1 through 6 {
+	.slice:nth-child(#{$i}){
+	 transform: rotateZ($i*60deg) rotateY(-90deg) rotateX(0deg);
+	 transition: .15s cubic-bezier(.25,.46,.45,.94) ($i*2s/10);
+	}
+	.portfolio-thumb:hover .slice:nth-child(#{$i}){
+			border-left: 3.69em solid rgba(0,40 + $i*5,(55 + $i*5),1);
+      transform: rotateZ($i*60deg) rotateY(0deg) rotateX(0deg);
+	    transition: .15s cubic-bezier(.25,.46,.45,.94) ($i*2s/10);
+	}
+}
