@@ -106,6 +106,38 @@
     z-index:-100;
     border-radius: 3px 3px 0 0;
 }
+.githublink{
+	display:table;
+	@include border-bottom-left-radius(5px);
+	@include border-top-left-radius(5px);
+	position:fixed;
+	right: -175px;
+	background: $offWhite100;
+	transition: right .5s;
+	*{
+		display:table-cell;
+		vertical-align:middle;
+
+	}
+	a{
+		padding:5px 8px;
+		color:$black100;
+		display:block;
+		text-decoration:none;
+		p{
+			padding-left:10px;
+		}
+	}
+	&:hover{
+		transition: right .5s, background .5s .4s;
+		right:0px;
+		background: $mainRed100;
+		a{
+			color: $white100;
+			transition: color .5s .4s;
+		}
+	}
+}
 @for $i from 1 through 6 {
 	.slice:nth-child(#{$i}){
 	 transform: rotateZ($i*60deg) rotateY(-90deg) rotateX(0deg);

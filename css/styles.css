@@ -293,6 +293,38 @@ footer {
   z-index: -100;
   border-radius: 3px 3px 0 0; }
 
+.githublink {
+  display: table;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -ms-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -ms-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  position: fixed;
+  right: -175px;
+  background: #eeeeee;
+  transition: right .5s; }
+  .githublink * {
+    display: table-cell;
+    vertical-align: middle; }
+  .githublink a {
+    padding: 5px 8px;
+    color: black;
+    display: block;
+    text-decoration: none; }
+    .githublink a p {
+      padding-left: 10px; }
+  .githublink:hover {
+    transition: right .5s, background .5s .4s;
+    right: 0px;
+    background: #d2503c; }
+    .githublink:hover a {
+      color: white;
+      transition: color .5s .4s; }
+
 .slice:nth-child(1) {
   transform: rotateZ(60deg) rotateY(-90deg) rotateX(0deg);
   transition: 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s; }
