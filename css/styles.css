@@ -303,7 +303,7 @@ footer {
   -moz-border-top-left-radius: 5px;
   -ms-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
-  position: fixed;
+  position: absolute;
   right: -175px;
   background: #eeeeee;
   transition: right .5s; }
